@@ -1,6 +1,6 @@
 # Judgment Guard
 
-A Claude skill that calibrates trust in AI-generated advice — ensuring confidence matches evidence, no more, no less.
+An Agent Skill (agentskills.io) that calibrates trust in AI-generated advice — ensuring confidence matches evidence, no more, no less. Runs in Claude Code, Codex, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and any agent that reads `SKILL.md`.
 
 ## Structure
 
@@ -14,7 +14,7 @@ examples/
   worked-example.md           # One complete Tier B report (loaded on demand)
 package.json                  # npm package config — enables `npx @fydel-ai/judgment-guard`; `npm test` and `npm version` hooks
 bin/
-  install.mjs                 # CLI installer — copies skill files to ~/.claude/skills/judgment-guard/, reports version change
+  install.mjs                 # CLI installer — copies skill files into one or more agents' skills dirs (--agent, --project, --dir), reports version change
   check.mjs                   # `npm test` — validates SKILL.md frontmatter against the Agent Skills spec; checks metadata.version == package.json version
 ```
 
@@ -48,4 +48,6 @@ Step 2 (evidence sweep) optimises for **recall**: find every kind of evidence th
 - Source-type rows in `evidence-protocol.md` and the coverage note in the template should match
 - Rubric levels (high/medium/low) in `rubric.md` should match the scales used in the decision audit
 - False consensus uses `none detected / possible / present` scale across all files
-- Any new top-level file or directory the skill references must be added to `bin/install.mjs` and the `files` array in `package.json`
+- Any new top-level file or directory the skill references must be added to `FILES` in `bin/install.mjs` and the `files` array in `package.json`
+- Agent install paths in `bin/install.mjs` (`AGENTS`) must come from the agent's own docs, not third-party guides. The README table mirrors them; change both together
+- Keep `SKILL.md` frontmatter and body portable: no Claude Code-only fields (`when_to_use`, `context`, `hooks`, `!` command injection). Refer to tools generically ("search tool"), not by Claude tool names
