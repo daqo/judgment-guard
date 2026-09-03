@@ -9,13 +9,20 @@
 
 ### Claim map
 **Supported facts**
--
+- _claim — [type] origin, date_
 
 **Reasonable inferences**
 -
 
 **Speculation / missing evidence**
 -
+
+**Coverage**
+- Searched: _matrix rows filled_
+- Nothing found: _rows searched with no result_
+- Not applicable: _rows — reason_
+- Independent origins: _count_
+- Stopped because: _saturation / budget / no search tool_
 
 ### Hidden assumptions
 **What must be true for the inferences above to hold**

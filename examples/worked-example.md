@@ -9,30 +9,54 @@ Illustrative only. The figures show the *shape* of the reasoning, not current da
 **Draft (Step 1, not shown to the user):**
 > Invest it. Index funds have historically returned around 10% a year, which beats your 6% loan, so you come out ahead by investing. Paying off low-interest debt early is a common mistake — the math is clear.
 
+Load-bearing claims: (1) long-run index returns exceed 6%; (2) therefore investing comes out ahead; (3) paying off low-rate debt early is a mistake.
+
+**Evidence sweep (Step 2, not shown to the user; origins are placeholders):**
+
+| Claim | Query | Result |
+|---|---|---|
+| 1 | confirming: historical average return broad index fund | [primary data] index provider's published long-run return series — confirms high-single-digit to ~10% nominal average |
+| 1 | disconfirming: decade-long periods index fund returned less than 6% | [primary data] same series — several rolling 10-year windows below 6%, some negative |
+| 1 | recency: current long-run average return figures | [first-party] fund company fact sheet, this year — consistent with the above |
+| 2 | disconfirming: pay off student loan vs invest arguments against investing | [practitioner] two personal-finance advisers arguing debt-first on risk and behavioural grounds |
+| 2 | perspective: what do people who paid off loans early say | [community] forum threads — reports of reduced stress and higher savings rate after payoff; no controlled data |
+| 2 | recency: student loan interest deduction rules current year; forgiveness programs current status | [official] tax authority page and student-aid agency page, this year — deduction exists with income limits; forgiveness eligibility depends on loan type and employer |
+| 3 | confirming/disconfirming: is paying low-interest debt early a mistake | [practitioner] split — expected-value school says yes, debt-first school says no; no peer-reviewed study on outcomes for this decision found |
+
+Coverage matrix: primary data — filled; peer-reviewed — searched, nothing found on this specific decision; official/regulatory — filled; first-party — filled; practitioner — filled (both camps); community — filled; recent news — N/A (no relevant policy change surfaced in recency queries). Independent origins: 6. Stopped: saturation after 9 queries.
+
 ---
 
 ### Decision audit
-- Evidence strength: medium — the 6% cost and the historical average are supported; the "you come out ahead" conclusion rests on an inference (future returns resemble the past) and on unstated facts about the user.
+- Evidence strength: medium — the 6% cost, the historical average and its variance, and the tax/forgiveness rules are supported with ledger entries; the "you come out ahead" conclusion rests on an inference (future returns resemble the past) and on unstated facts about the user, and the peer-reviewed row came back empty.
 - Assumption visibility: low — the draft states none of the five assumptions listed below.
 - Confidence calibration: overstated — "the math is clear" and "common mistake" are definitive language attached to inference rows, not fact rows.
 - Action pressure: high — opens with an imperative ("Invest it") and frames the alternative as a mistake.
 - Alternative coverage: low — a split, the employer match, and paying down higher-rate debt first are all absent.
 - Epistemic authority: appropriate — general reasoning, no claim of professional standing.
-- False consensus: possible — the draft presents the expected-value view as settled; the debt-first school of personal finance disagrees on grounds (risk, behaviour) the draft never mentions.
+- False consensus: possible — the draft presents the expected-value view as settled; practitioner sources split, and the debt-first school disagrees on grounds (risk, behaviour) the draft never mentions.
 
 ### Claim map
 **Supported facts**
-- The loan costs 6% per year (stated by the user).
-- Paying off the loan is a guaranteed, risk-free 6% return.
-- Broad stock-index funds have historically averaged high single digits to roughly 10% nominal per year over long periods, with large year-to-year variance. *(Training-data figure — verify current long-run averages.)*
+- The loan costs 6% per year — user-supplied.
+- Paying off the loan is a guaranteed, risk-free 6% return — follows directly from the loan terms; no external source needed.
+- Broad stock-index funds have historically averaged high single digits to roughly 10% nominal per year over long periods, with large variance including rolling 10-year windows below 6% — [primary data] index provider's long-run return series; [first-party] fund company fact sheet, this year.
+- Student-loan interest may be deductible subject to income limits, and forgiveness eligibility depends on loan type and employer — [official] tax authority and student-aid agency pages, this year.
 
 **Reasonable inferences**
 - Over a long horizon, expected returns from investing likely exceed 6%.
 - Therefore the expected-value case favors investing.
 
 **Speculation / missing evidence**
-- "You come out ahead" — the realized outcome over the user's actual horizon is unknown; a run of poor years could leave them behind.
-- "Paying off low-interest debt early is a common mistake" — a school-of-thought claim presented as fact. The debt-first view (guaranteed return, reduced risk, behavioural benefit) is a legitimate alternative position, not an error.
+- "You come out ahead" — the realized outcome over the user's actual horizon is unknown; the return series shows 10-year windows where investing would have lost to the loan.
+- "Paying off low-interest debt early is a common mistake" — a school-of-thought claim presented as fact. Practitioner sources split; no peer-reviewed outcome study on this decision was found. The debt-first view (guaranteed return, reduced risk, behavioural benefit) is a legitimate position, not an error.
+
+**Coverage**
+- Searched: primary data, official/regulatory, first-party, practitioner commentary, community reports
+- Nothing found: peer-reviewed research on outcomes of this specific decision
+- Not applicable: recent news — recency queries surfaced no relevant policy change
+- Independent origins: 6
+- Stopped because: saturation after 9 queries
 
 ### Hidden assumptions
 **What must be true for the inferences above to hold**
