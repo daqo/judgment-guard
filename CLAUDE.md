@@ -1,6 +1,6 @@
 # Judgment Guard
 
-An Agent Skill (agentskills.io) that calibrates trust in AI-generated advice — ensuring confidence matches evidence, no more, no less. Runs in Claude Code, Codex, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and any agent that reads `SKILL.md`.
+An Agent Skill (agentskills.io) that calibrates trust in AI-generated advice — ensuring confidence matches evidence, no more, no less. Runs in Claude Code, Codex, Gemini CLI, Cursor, OpenCode, GitHub Copilot, OpenClaw, and any agent that reads `SKILL.md`.
 
 ## Structure
 

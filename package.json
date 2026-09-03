@@ -1,7 +1,7 @@
 {
   "name": "@fydel-ai/judgment-guard",
   "version": "1.4.0",
-  "description": "Agent Skill that calibrates trust in AI-generated advice. Works in Claude Code, Codex, Gemini CLI, Cursor, OpenCode, and any agent that reads SKILL.md",
+  "description": "Agent Skill that calibrates trust in AI-generated advice. Works in Claude Code, Codex, Gemini CLI, Cursor, OpenCode, OpenClaw, and any agent that reads SKILL.md",
   "license": "MIT",
   "type": "module",
   "repository": {
@@ -33,6 +33,7 @@
     "gemini-cli",
     "cursor",
     "opencode",
+    "openclaw",
     "judgment",
     "uncertainty",
     "calibration"

@@ -2,7 +2,7 @@
 
 An [Agent Skill](https://agentskills.io) that calibrates trust in AI-generated advice — confidence matches evidence, no more, no less.
 
-Ask your agent for advice on money, health, career, legal, safety, or a big purchase, and this skill makes it gather the evidence, audit its own draft, and answer at the confidence the evidence actually supports. Works in Claude Code, Codex, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and any agent that reads `SKILL.md`.
+Ask your agent for advice on money, health, career, legal, safety, or a big purchase, and this skill makes it gather the evidence, audit its own draft, and answer at the confidence the evidence actually supports. Works in Claude Code, Codex, Gemini CLI, Cursor, OpenCode, GitHub Copilot, OpenClaw, and any agent that reads `SKILL.md`.
 
 ## Install
 
@@ -28,7 +28,8 @@ npx @fydel-ai/judgment-guard@latest --agent all
 | `opencode` | `~/.config/opencode/skills/` |
 | `cursor` | `~/.cursor/skills/` |
 | `copilot` | `~/.copilot/skills/` |
-| `agents` | `~/.agents/skills/` — shared path read by Gemini, OpenCode, Cline, Zed, Warp, and others |
+| `openclaw` | `~/.openclaw/skills/` — or natively: `openclaw skills install git:fydel-ai/judgment-guard@main` |
+| `agents` | `~/.agents/skills/` — shared path read by Gemini, OpenCode, OpenClaw, Cline, Zed, Warp, and others |
 
 **Share with a team** — add `--project` to install into the current repo (`.claude/skills/` or `.agents/skills/`) and commit it. Teammates get it when they pull.
 

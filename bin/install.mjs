@@ -23,6 +23,7 @@ const AGENTS = {
   opencode: { label: "OpenCode",       user: "~/.config/opencode/skills", project: ".opencode/skills" },
   cursor:   { label: "Cursor",         user: "~/.cursor/skills",          project: ".agents/skills" },
   copilot:  { label: "GitHub Copilot", user: "~/.copilot/skills",         project: ".agents/skills" },
+  openclaw: { label: "OpenClaw",       user: "~/.openclaw/skills",        project: ".agents/skills" },
   agents:   { label: "shared .agents", user: "~/.agents/skills",          project: ".agents/skills" },
 };
 
