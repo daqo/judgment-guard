@@ -21,7 +21,7 @@ Load-bearing claims: (1) long-run index returns exceed 6%; (2) therefore investi
 | 2 | disconfirming: pay off student loan vs invest arguments against investing | [practitioner] two personal-finance advisers arguing debt-first on risk and behavioural grounds |
 | 2 | perspective: what do people who paid off loans early say | [community] forum threads — reports of reduced stress and higher savings rate after payoff; no controlled data |
 | 2 | recency: student loan interest deduction rules current year; forgiveness programs current status | [official] tax authority page and student-aid agency page, this year — deduction exists with income limits; forgiveness eligibility depends on loan type and employer |
-| 3 | confirming/disconfirming: is paying low-interest debt early a mistake | [practitioner] split — expected-value school says yes, debt-first school says no; no peer-reviewed study on outcomes for this decision found |
+| 3 | disconfirming: arguments for paying off low-interest debt early | [practitioner] debt-first school — guaranteed return, risk reduction, behavioural benefit; expected-value school disagrees; no peer-reviewed study on outcomes for this decision found |
 
 Coverage matrix: primary data — filled; peer-reviewed — searched, nothing found on this specific decision; official/regulatory — filled; first-party — filled; practitioner — filled (both camps); community — filled; recent news — N/A (no relevant policy change surfaced in recency queries). Independent origins: 6. Stopped: saturation after 8 queries.
 
@@ -52,18 +52,21 @@ Coverage matrix: primary data — filled; peer-reviewed — searched, nothing fo
 - "Paying off low-interest debt early is a common mistake" — a school-of-thought claim presented as fact. Practitioner sources split; no peer-reviewed outcome study on this decision was found. The debt-first view (guaranteed return, reduced risk, behavioural benefit) is a legitimate position, not an error.
 
 **Evidence sweep**
-1. Long-run index returns exceed 6%
-   Queries: "historical average return broad index fund" · "decade-long periods index fund returned less than 6%" · "current long-run average return figures"
-   For: high-single-digit to ~10% nominal long-run average — index provider's return series; fund company fact sheet, this year
-   Against: several rolling 10-year windows below 6%, some negative — same return series
-2. Therefore investing comes out ahead
-   Queries: "pay off student loan vs invest arguments against investing" · "what do people who paid off loans early say" · "student loan interest deduction rules current year" · "forgiveness programs current status"
-   For: expected-value case — practitioner sources
-   Against: guaranteed 6% beats an uncertain average for a short horizon or a low risk tolerance — two debt-first advisers; community reports of reduced stress and higher savings rate after payoff (anecdotal); no controlled outcome study found
-3. Paying off low-rate debt early is a mistake
-   Queries: "is paying low-interest debt early a mistake"
-   For: expected-value school — practitioner sources
-   Against: debt-first school treats it as a legitimate risk-reduction choice — practitioner sources split; no peer-reviewed evidence either way
+
+1. **Long-run index returns exceed 6%** → supported fact, with a variance caveat
+   - (+) `historical average return broad index fund` → high-single-digit to ~10% nominal long-run average (index provider's return series)
+   - (−) `decade-long periods index fund returned less than 6%` → several rolling 10-year windows below 6%, some negative (same series)
+   - (↻) `current long-run average return figures` → consistent with the above (fund company fact sheet, this year)
+
+2. **Therefore investing comes out ahead** → speculation; the underlying expected-value inference holds, the realized outcome doesn't follow
+   - (+) no query — follows from claim 1 (expected-value case, practitioner sources)
+   - (−) `pay off student loan vs invest arguments against investing` → guaranteed 6% beats an uncertain average on a short horizon or low risk tolerance (two debt-first advisers)
+   - (⇄) `what do people who paid off loans early say` → reduced stress, higher savings rate after payoff; anecdotal, no controlled data (community forum threads)
+   - (↻) `student loan interest deduction rules current year` → deduction exists with income limits (tax authority page, this year)
+   - (↻) `forgiveness programs current status` → eligibility depends on loan type and employer (student-aid agency page, this year)
+
+3. **Paying off low-rate debt early is a mistake** → speculation, sources split
+   - (−) `arguments for paying off low-interest debt early` → debt-first school: guaranteed return, risk reduction, behavioural benefit; expected-value school disagrees; no peer-reviewed outcome study found (practitioner sources, split)
 
 **Coverage**
 - Searched: primary data, official/regulatory, first-party, practitioner commentary, community reports

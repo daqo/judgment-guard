@@ -18,10 +18,11 @@
 -
 
 **Evidence sweep**
-1. _load-bearing claim_
-   Queries: _"…" · "…" · "…"_
-   For: _finding — origin_
-   Against: _finding — origin_ / _none found_
+
+1. **_load-bearing claim_** → _supported fact / inference / speculation, qualifier_
+   - (+) `_query_` → _what it found_ (_origin_)
+   - (−) `_query_` → _what it found_ (_origin_) / _nothing found_
+   - (↻) `_query_` → _what it found_ (_origin, date_)
 2.
 
 **Coverage**

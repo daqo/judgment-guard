@@ -76,17 +76,38 @@ If the session has no web search or fetch tool:
 ## 10. What the reader sees
 Two summaries of the ledger go into the claim map. The full ledger (per-result rows) stays internal.
 
-**Evidence sweep** — one entry per load-bearing claim: the exact queries run, then For and Against with origins named:
+**Evidence sweep** — one numbered entry per load-bearing claim. The heading carries the claim and a verdict; under it, one bullet per query run, in the order run:
 
 ```
 **Evidence sweep**
-1. <load-bearing claim>
-   Queries: "<confirming query>" · "<disconfirming query>" · "<recency query>"
-   For: <finding> — <origin>, <origin>
-   Against: <finding> — <origin>   |   none found
+
+1. **<load-bearing claim>** → <verdict>
+   - (+) `<query>` → <what it found> (<origin>)
+   - (−) `<query>` → <what it found> (<origin>)
+   - (↻) `<query>` → <what it found> (<origin>, <date>)
+   - (⇄) `<query>` → <what it found> (<origin>)
+   - (−) `<query>` → nothing found
+   - (+) no query — <where the support comes from> (<origin>)
 ```
 
-Write queries verbatim as run, in order, separated by ` · `. List weak counter-evidence with its weight rather than dropping it. The reader should be able to see, for each claim, what was asked, that the counter-case was looked for, and what turned up.
+Markers say what the query was **looking for**, not what it found:
+
+| Marker | Query type | Looking for |
+|---|---|---|
+| `(+)` | confirming | the best support for the claim as stated |
+| `(−)` | disconfirming | the best case against it |
+| `(↻)` | recency | whether anything has changed since the training cutoff |
+| `(⇄)` | perspective | how a different stakeholder frames it |
+
+Results go after the arrow. `→ nothing found` is a result. A query that returned both sides describes both after the arrow.
+
+**Verdict** — the claim-map bucket the claim sits in, so the block ties to the rest of the report: `supported fact`, `inference`, or `speculation`. Add a qualifier of a few words when it helps (`supported fact, with a variance caveat` · `inference, contested` · `speculation, sources split`). The verdict must match the bucket where the claim appears above.
+
+Rules:
+- Queries verbatim as run, in backticks, one per bullet.
+- Every load-bearing claim has at least one `(−)` bullet. If the counter-case search found nothing, the bullet still appears with `→ nothing found`.
+- List weak counter-evidence with its weight rather than dropping it.
+- Support that comes from another claim or from a user-supplied fact, not from a query, is written `no query —` in the query position so the reader can tell.
 
 **Coverage** — one short block at the end of the claim map:
 
