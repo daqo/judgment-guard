@@ -11,7 +11,7 @@ Illustrative only. The figures show the *shape* of the reasoning, not current da
 
 Load-bearing claims: (1) long-run index returns exceed 6%; (2) therefore investing comes out ahead; (3) paying off low-rate debt early is a mistake.
 
-**Evidence sweep (Step 2, not shown to the user; origins are placeholders):**
+**Evidence ledger (Step 2, internal — its For/Against summary appears in the claim map below; origins are placeholders):**
 
 | Claim | Query | Result |
 |---|---|---|
@@ -50,6 +50,17 @@ Coverage matrix: primary data — filled; peer-reviewed — searched, nothing fo
 **Speculation / missing evidence**
 - "You come out ahead" — the realized outcome over the user's actual horizon is unknown; the return series shows 10-year windows where investing would have lost to the loan.
 - "Paying off low-interest debt early is a common mistake" — a school-of-thought claim presented as fact. Practitioner sources split; no peer-reviewed outcome study on this decision was found. The debt-first view (guaranteed return, reduced risk, behavioural benefit) is a legitimate position, not an error.
+
+**Evidence sweep**
+1. Long-run index returns exceed 6%
+   For: high-single-digit to ~10% nominal long-run average — index provider's return series; fund company fact sheet, this year
+   Against: several rolling 10-year windows below 6%, some negative — same return series
+2. Therefore investing comes out ahead
+   For: expected-value case — practitioner sources
+   Against: guaranteed 6% beats an uncertain average for a short horizon or a low risk tolerance — two debt-first advisers; community reports of reduced stress and higher savings rate after payoff (anecdotal); no controlled outcome study found
+3. Paying off low-rate debt early is a mistake
+   For: expected-value school — practitioner sources
+   Against: debt-first school treats it as a legitimate risk-reduction choice — practitioner sources split; no peer-reviewed evidence either way
 
 **Coverage**
 - Searched: primary data, official/regulatory, first-party, practitioner commentary, community reports

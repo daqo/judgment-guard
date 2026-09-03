@@ -73,8 +73,21 @@ If the session has no web search or fetch tool:
 - cap Evidence strength at **medium**
 - move every unfilled matrix row into *What to verify before acting*
 
-## 10. Coverage note
-End the claim map with one short block:
+## 10. What the reader sees
+The ledger itself stays internal. Two summaries of it go into the claim map:
+
+**Evidence sweep** — one entry per load-bearing claim, For and Against, origins named, no query wording:
+
+```
+**Evidence sweep**
+1. <load-bearing claim>
+   For: <finding> — <origin>, <origin>
+   Against: <finding> — <origin>   |   none found — searched <source types>
+```
+
+List weak counter-evidence with its weight rather than dropping it. The reader should be able to see, for each claim, that the counter-case was looked for and what turned up.
+
+**Coverage** — one short block at the end of the claim map:
 
 ```
 **Coverage**
