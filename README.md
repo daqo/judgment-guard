@@ -57,6 +57,28 @@ Committed to a repository, this gives teammates:
 
 Claude Code can load the skill automatically when the prompt calls for advice on consequential topics, or you can invoke it directly with `/judgment-guard`.
 
+## Update
+
+Skills are plain files; nothing updates automatically. Re-run whichever install path you used:
+
+| You installed with | To update |
+|---|---|
+| `npx` | `npx @fydel-ai/judgment-guard@latest` — overwrites existing files and adds new ones. Requires the new version to be published to npm |
+| `git clone` | `cd ~/.claude/skills/judgment-guard && git pull origin main` — works as soon as a change lands on `main` |
+| Project install | Re-run the `cp -Rf …` command above and commit. Teammates get the update when they pull the project |
+
+Don't mix paths: running `npx` on top of a `git clone` checkout overwrites tracked files and leaves a dirty working tree. Claude Code picks up changes to `~/.claude/skills/` in the current session; if it doesn't, start a new session.
+
+### Check the installed version
+
+The version is recorded in the `metadata.version` field of `SKILL.md`, per the Agent Skills spec:
+
+```bash
+grep -A1 '^metadata:' ~/.claude/skills/judgment-guard/SKILL.md
+```
+
+Installs from 1.2.x and earlier carry no version field. The `npx` installer also prints the previous and new version when it updates an existing install.
+
 ## Files
 
 | File | Purpose |
@@ -66,6 +88,8 @@ Claude Code can load the skill automatically when the prompt calls for advice on
 | `rubric.md` | Level definitions for all seven dimensions, plus guidance for borderline ratings and the recall gate. Loaded on demand |
 | `templates/report_template.md` | Blank template for the five output sections |
 | `examples/worked-example.md` | One complete Tier B report, loaded on demand when the agent needs to see a finished output |
+| `bin/install.mjs` | Installer used by `npx`. Copies the skill to `~/.claude/skills/judgment-guard/` and reports the version change |
+| `bin/check.mjs` | `npm test`. Validates `SKILL.md` frontmatter against the Agent Skills spec and checks `metadata.version` matches `package.json` |
 
 ## Example output
 

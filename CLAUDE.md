@@ -12,9 +12,10 @@ templates/
   report_template.md          # Blank output template (Decision audit, Claim map, Hidden assumptions, Calibrated answer, What to verify)
 examples/
   worked-example.md           # One complete Tier B report (loaded on demand)
-package.json                  # npm package config — enables `npx @fydel-ai/judgment-guard`
+package.json                  # npm package config — enables `npx @fydel-ai/judgment-guard`; `npm test` and `npm version` hooks
 bin/
-  install.mjs                 # CLI installer — copies skill files to ~/.claude/skills/judgment-guard/
+  install.mjs                 # CLI installer — copies skill files to ~/.claude/skills/judgment-guard/, reports version change
+  check.mjs                   # `npm test` — validates SKILL.md frontmatter against the Agent Skills spec; checks metadata.version == package.json version
 ```
 
 ## How it works
@@ -39,7 +40,10 @@ Step 2 (evidence sweep) optimises for **recall**: find every kind of evidence th
 
 ## Editing guidelines
 
-- `SKILL.md` frontmatter (`name`, `description`) must remain valid YAML. Keep the `description` concrete and evaluable from the user's question alone — abstract phrasing broke auto-invocation once already (see PR #5)
+- `SKILL.md` frontmatter must use only the six Agent Skills spec fields (`name`, `description`, `license`, `compatibility`, `metadata`, `allowed-tools`). An unrecognized field broke loading once already (#6); `npm test` now rejects any other key
+- Keep the `description` concrete and evaluable from the user's question alone — abstract phrasing broke auto-invocation once already (#5)
+- The skill version lives in `metadata.version` in `SKILL.md` and must equal `package.json` `version`. Bump with `npm version <patch|minor|major>` — the `version` hook rewrites `SKILL.md` and stages it. Never edit one without the other; `npm test` fails on drift
+- Run `npm test` before committing
 - The five output sections in `SKILL.md`, `templates/report_template.md`, and `examples/worked-example.md` must stay in sync. The coverage note lives inside the Claim map section, not as a sixth section
 - Source-type rows in `evidence-protocol.md` and the coverage note in the template should match
 - Rubric levels (high/medium/low) in `rubric.md` should match the scales used in the decision audit
