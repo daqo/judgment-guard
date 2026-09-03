@@ -17,6 +17,13 @@
 **Speculation / missing evidence**
 -
 
+**Evidence sweep**
+1. _load-bearing claim_
+   Queries: _"…" · "…" · "…"_
+   For: _finding — origin_
+   Against: _finding — origin_ / _none found_
+2.
+
 **Coverage**
 - Searched: _matrix rows filled_
 - Nothing found: _rows searched with no result_

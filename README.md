@@ -69,7 +69,7 @@ Every advice answer goes through seven steps, each with a checkpoint:
 
 1. **Draft** from prior knowledge, marking the load-bearing claims — a hypothesis, not an answer
 2. **Evidence sweep** — search for and against each load-bearing claim across primary data, research, official sources, first-party, practitioner, and community evidence; stop at saturation
-3. **Claim map** — supported facts (with sources), reasonable inferences, speculation, and what was searched but not found
+3. **Claim map** — supported facts (with sources), reasonable inferences, speculation, then the evidence sweep laid out per claim: the **queries** run, what was found **for** it, what was found **against** it, and what was searched but not found
 4. **Hidden assumptions** — what must be true for each inference to hold
 5. **Rate** seven dimensions: evidence strength, assumption visibility, confidence calibration, action pressure, alternative coverage, epistemic authority, false consensus
 6. **Intervene** at the tier the evidence selects — direct answer, hedged options, or verification steps only

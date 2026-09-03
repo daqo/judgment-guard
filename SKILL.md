@@ -2,7 +2,7 @@
 name: judgment-guard
 description: Use this skill when the user asks for advice, recommendations, comparisons, prioritization, or decision support on consequential topics where evidence quality, recency, or uncertainty may affect the answer.
 metadata:
-  version: "1.4.0"
+  version: "1.5.0"
 ---
 # Judgment Guard
 Your job is to calibrate trust — ensure the answer earns exactly the confidence it projects. Well-supported advice should sound confident. Weakly supported advice should not.
@@ -49,9 +49,11 @@ Split every claim in the draft into exactly one of three buckets:
 - **Reasonable inferences** — follow from the facts plus a premise. Prior knowledge that retrieval did not confirm goes here.
 - **Speculation / missing evidence** — no direct support, support that may be stale, or a matrix row that came back empty.
 
-Where the prior and retrieved evidence disagree, retrieved-and-current wins for anything time-sensitive; note the update. End with the coverage note from Step 2.
+Where the prior and retrieved evidence disagree, retrieved-and-current wins for anything time-sensitive; note the update.
+
+Then show the sweep. Under **Evidence sweep**, one entry per load-bearing claim with a **Queries** line (the exact search strings run, in the order run), a **For** line and an **Against** line, each naming its origins. Weak counter-evidence is listed with its weight, not dropped. If nothing was found against a claim, say so ("none found") — the Queries line shows what was tried. End with the coverage note from Step 2.
 - **Produces:** the claim map.
-- **Checkpoint:** every claim in the draft appears in the map exactly once. Nothing sits in *Supported facts* without a ledger entry or user-supplied source.
+- **Checkpoint:** every claim in the draft appears in the map exactly once. Nothing sits in *Supported facts* without a ledger entry or user-supplied source. Every load-bearing claim has a Queries line, a For line, and an Against line.
 
 ### Step 4 — Hidden assumptions
 For each reasonable inference, write what must be true for it to hold. Flag any assumption the user is unlikely to have considered.
@@ -108,6 +110,7 @@ Do not return until every line passes. If one fails, go back to the named step.
 - [ ] No source-type matrix row is blank; each is filled, "nothing found," or N/A with a reason. *(Step 2)*
 - [ ] Sources counted as agreeing have distinct origins. *(Step 2)*
 - [ ] Every entry in *Supported facts* has a ledger entry or user-supplied source, cited inline. *(Step 3)*
+- [ ] Every load-bearing claim appears in the Evidence sweep block with its Queries, a For line, and an Against line. The Queries line includes at least one disconfirming query. *(Step 3)*
 - [ ] Every claim in the calibrated answer appears in the claim map. *(Step 3)*
 - [ ] Every "should," "best," ranking, or definitive verb in the calibrated answer rests on a supported fact — not an inference or speculation. *(Step 6)*
 - [ ] Every hedge in the calibrated answer maps to an inference or speculation row. No caveat is unearned. *(Step 6)*
@@ -137,6 +140,8 @@ Do not return until every line passes. If one fails, go back to the named step.
 | "One authoritative source is enough." | One source cannot show disagreement. Find the second, or record that you searched and it does not exist. |
 | "More searching won't change the answer." | You cannot know that before searching. Run the disconfirming and recency queries; if nothing new comes back, you have hit saturation, and you can say so. |
 | "No results means there's no evidence against it." | It means the query missed or the evidence is not indexed. Log it as a gap, not as support. |
+| "The counter-evidence is too weak to be worth showing." | Show it with its weight. A visible weak Against is how the reader knows you looked; an empty one looks like you didn't. |
+| "Listing the queries clutters the report." | One line per claim. The queries are the only part of the sweep the reader can independently re-run; without them "none found" is unfalsifiable. |
 | "I'm confident, so the claim map is a formality." | Confidence is the thing under audit. The claim map is how you find out whether it is earned. |
 | "I'll hedge everything to be safe." | Over-hedging is a calibration failure, not a safe default. It buries the claims the evidence supports and trains the user to ignore every caveat. |
 | "The sources basically agree." | "Basically" is where false consensus hides. Trace them to their origins; if they share one, they are one source. Otherwise name the disagreement. |
@@ -152,7 +157,7 @@ Return exactly these five sections, in this order. The skeleton is in `templates
 ### Decision audit
 One line per dimension: rating, then a one-clause reason pointing at the claim map. Include false consensus only when multiple sources or data points were synthesized.
 ### Claim map
-Supported facts (with origin cited inline) / Reasonable inferences / Speculation or missing evidence, followed by the coverage note (searched, nothing found, N/A, independent origins, why the sweep stopped).
+Supported facts (with origin cited inline) / Reasonable inferences / Speculation or missing evidence, then **Evidence sweep** (per load-bearing claim: the queries run, then For and Against with origins), then **Coverage** (searched, nothing found, N/A, independent origins, why the sweep stopped).
 ### Hidden assumptions
 What must be true for each inference to hold. Flag the ones the user is unlikely to have considered.
 ### Calibrated answer
@@ -169,7 +174,7 @@ The top 3 checks: what, where/how, and what result would change the conclusion.
 
 ## Reference files
 Load only when needed:
-- `evidence-protocol.md` — query plan, source-type coverage matrix, independence test, ledger format, stopping rule, no-search-tool fallback. Use during Step 2.
+- `evidence-protocol.md` — query plan, source-type coverage matrix, independence test, ledger format, stopping rule, no-search-tool fallback, and the reader-facing Evidence sweep and Coverage formats. Use during Steps 2–3.
 - `rubric.md` — level definitions for each dimension. Use when a rating is borderline.
 - `templates/report_template.md` — blank output skeleton.
 - `examples/worked-example.md` — one complete Tier B report. Use when unsure what a finished report looks like.

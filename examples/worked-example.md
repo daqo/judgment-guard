@@ -11,7 +11,7 @@ Illustrative only. The figures show the *shape* of the reasoning, not current da
 
 Load-bearing claims: (1) long-run index returns exceed 6%; (2) therefore investing comes out ahead; (3) paying off low-rate debt early is a mistake.
 
-**Evidence sweep (Step 2, not shown to the user; origins are placeholders):**
+**Evidence ledger (Step 2, internal — the reader sees its Queries/For/Against summary in the claim map below; origins are placeholders):**
 
 | Claim | Query | Result |
 |---|---|---|
@@ -23,7 +23,7 @@ Load-bearing claims: (1) long-run index returns exceed 6%; (2) therefore investi
 | 2 | recency: student loan interest deduction rules current year; forgiveness programs current status | [official] tax authority page and student-aid agency page, this year — deduction exists with income limits; forgiveness eligibility depends on loan type and employer |
 | 3 | confirming/disconfirming: is paying low-interest debt early a mistake | [practitioner] split — expected-value school says yes, debt-first school says no; no peer-reviewed study on outcomes for this decision found |
 
-Coverage matrix: primary data — filled; peer-reviewed — searched, nothing found on this specific decision; official/regulatory — filled; first-party — filled; practitioner — filled (both camps); community — filled; recent news — N/A (no relevant policy change surfaced in recency queries). Independent origins: 6. Stopped: saturation after 9 queries.
+Coverage matrix: primary data — filled; peer-reviewed — searched, nothing found on this specific decision; official/regulatory — filled; first-party — filled; practitioner — filled (both camps); community — filled; recent news — N/A (no relevant policy change surfaced in recency queries). Independent origins: 6. Stopped: saturation after 8 queries.
 
 ---
 
@@ -51,12 +51,26 @@ Coverage matrix: primary data — filled; peer-reviewed — searched, nothing fo
 - "You come out ahead" — the realized outcome over the user's actual horizon is unknown; the return series shows 10-year windows where investing would have lost to the loan.
 - "Paying off low-interest debt early is a common mistake" — a school-of-thought claim presented as fact. Practitioner sources split; no peer-reviewed outcome study on this decision was found. The debt-first view (guaranteed return, reduced risk, behavioural benefit) is a legitimate position, not an error.
 
+**Evidence sweep**
+1. Long-run index returns exceed 6%
+   Queries: "historical average return broad index fund" · "decade-long periods index fund returned less than 6%" · "current long-run average return figures"
+   For: high-single-digit to ~10% nominal long-run average — index provider's return series; fund company fact sheet, this year
+   Against: several rolling 10-year windows below 6%, some negative — same return series
+2. Therefore investing comes out ahead
+   Queries: "pay off student loan vs invest arguments against investing" · "what do people who paid off loans early say" · "student loan interest deduction rules current year" · "forgiveness programs current status"
+   For: expected-value case — practitioner sources
+   Against: guaranteed 6% beats an uncertain average for a short horizon or a low risk tolerance — two debt-first advisers; community reports of reduced stress and higher savings rate after payoff (anecdotal); no controlled outcome study found
+3. Paying off low-rate debt early is a mistake
+   Queries: "is paying low-interest debt early a mistake"
+   For: expected-value school — practitioner sources
+   Against: debt-first school treats it as a legitimate risk-reduction choice — practitioner sources split; no peer-reviewed evidence either way
+
 **Coverage**
 - Searched: primary data, official/regulatory, first-party, practitioner commentary, community reports
 - Nothing found: peer-reviewed research on outcomes of this specific decision
 - Not applicable: recent news — recency queries surfaced no relevant policy change
 - Independent origins: 6
-- Stopped because: saturation after 9 queries
+- Stopped because: saturation after 8 queries
 
 ### Hidden assumptions
 **What must be true for the inferences above to hold**
