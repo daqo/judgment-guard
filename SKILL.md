@@ -2,7 +2,7 @@
 name: judgment-guard
 description: Use this skill when the user asks for advice, recommendations, comparisons, prioritization, or decision support on consequential topics where evidence quality, recency, or uncertainty may affect the answer.
 metadata:
-  version: "1.4.0"
+  version: "1.5.0"
 ---
 # Judgment Guard
 Your job is to calibrate trust — ensure the answer earns exactly the confidence it projects. Well-supported advice should sound confident. Weakly supported advice should not.
