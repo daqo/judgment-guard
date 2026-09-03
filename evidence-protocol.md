@@ -74,18 +74,19 @@ If the session has no web search or fetch tool:
 - move every unfilled matrix row into *What to verify before acting*
 
 ## 10. What the reader sees
-The ledger itself stays internal. Two summaries of it go into the claim map:
+Two summaries of the ledger go into the claim map. The full ledger (per-result rows) stays internal.
 
-**Evidence sweep** — one entry per load-bearing claim, For and Against, origins named, no query wording:
+**Evidence sweep** — one entry per load-bearing claim: the exact queries run, then For and Against with origins named:
 
 ```
 **Evidence sweep**
 1. <load-bearing claim>
+   Queries: "<confirming query>" · "<disconfirming query>" · "<recency query>"
    For: <finding> — <origin>, <origin>
-   Against: <finding> — <origin>   |   none found — searched <source types>
+   Against: <finding> — <origin>   |   none found
 ```
 
-List weak counter-evidence with its weight rather than dropping it. The reader should be able to see, for each claim, that the counter-case was looked for and what turned up.
+Write queries verbatim as run, in order, separated by ` · `. List weak counter-evidence with its weight rather than dropping it. The reader should be able to see, for each claim, what was asked, that the counter-case was looked for, and what turned up.
 
 **Coverage** — one short block at the end of the claim map:
 
