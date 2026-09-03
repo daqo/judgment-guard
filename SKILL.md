@@ -2,7 +2,7 @@
 name: judgment-guard
 description: Use this skill when the user asks for advice, recommendations, comparisons, prioritization, or decision support on consequential topics where evidence quality, recency, or uncertainty may affect the answer.
 metadata:
-  version: "1.5.0"
+  version: "1.6.0"
 ---
 # Judgment Guard
 Your job is to calibrate trust — ensure the answer earns exactly the confidence it projects. Well-supported advice should sound confident. Weakly supported advice should not.
@@ -51,9 +51,9 @@ Split every claim in the draft into exactly one of three buckets:
 
 Where the prior and retrieved evidence disagree, retrieved-and-current wins for anything time-sensitive; note the update.
 
-Then show the sweep. Under **Evidence sweep**, one entry per load-bearing claim with a **Queries** line (the exact search strings run, in the order run), a **For** line and an **Against** line, each naming its origins. Weak counter-evidence is listed with its weight, not dropped. If nothing was found against a claim, say so ("none found") — the Queries line shows what was tried. End with the coverage note from Step 2.
+Then show the sweep. Under **Evidence sweep**, one numbered entry per load-bearing claim. The heading is the claim and a **verdict** — the claim-map bucket it landed in (`supported fact`, `inference`, or `speculation`) plus an optional short qualifier. Under it, **one bullet per query run**: a marker for what the query was looking for — `(+)` support, `(−)` counter-evidence, `(↻)` recency, `(⇄)` another stakeholder's framing — then the query verbatim in backticks, an arrow, what it found, and the origin in parentheses. A query that found nothing reads `→ nothing found`. Support that comes from another claim or a user-supplied fact rather than a query is written `no query —` in the query position. Weak counter-evidence is listed with its weight, not dropped. Format and legend are in `evidence-protocol.md` §10. End with the coverage note from Step 2.
 - **Produces:** the claim map.
-- **Checkpoint:** every claim in the draft appears in the map exactly once. Nothing sits in *Supported facts* without a ledger entry or user-supplied source. Every load-bearing claim has a Queries line, a For line, and an Against line.
+- **Checkpoint:** every claim in the draft appears in the map exactly once. Nothing sits in *Supported facts* without a ledger entry or user-supplied source. Every load-bearing claim has a verdict that matches its bucket above, and at least one `(−)` bullet.
 
 ### Step 4 — Hidden assumptions
 For each reasonable inference, write what must be true for it to hold. Flag any assumption the user is unlikely to have considered.
@@ -110,7 +110,7 @@ Do not return until every line passes. If one fails, go back to the named step.
 - [ ] No source-type matrix row is blank; each is filled, "nothing found," or N/A with a reason. *(Step 2)*
 - [ ] Sources counted as agreeing have distinct origins. *(Step 2)*
 - [ ] Every entry in *Supported facts* has a ledger entry or user-supplied source, cited inline. *(Step 3)*
-- [ ] Every load-bearing claim appears in the Evidence sweep block with its Queries, a For line, and an Against line. The Queries line includes at least one disconfirming query. *(Step 3)*
+- [ ] Every load-bearing claim appears in the Evidence sweep block with a verdict matching its claim-map bucket, one bullet per query run, and at least one `(−)` bullet. *(Step 3)*
 - [ ] Every claim in the calibrated answer appears in the claim map. *(Step 3)*
 - [ ] Every "should," "best," ranking, or definitive verb in the calibrated answer rests on a supported fact — not an inference or speculation. *(Step 6)*
 - [ ] Every hedge in the calibrated answer maps to an inference or speculation row. No caveat is unearned. *(Step 6)*
@@ -141,7 +141,7 @@ Do not return until every line passes. If one fails, go back to the named step.
 | "More searching won't change the answer." | You cannot know that before searching. Run the disconfirming and recency queries; if nothing new comes back, you have hit saturation, and you can say so. |
 | "No results means there's no evidence against it." | It means the query missed or the evidence is not indexed. Log it as a gap, not as support. |
 | "The counter-evidence is too weak to be worth showing." | Show it with its weight. A visible weak Against is how the reader knows you looked; an empty one looks like you didn't. |
-| "Listing the queries clutters the report." | One line per claim. The queries are the only part of the sweep the reader can independently re-run; without them "none found" is unfalsifiable. |
+| "Listing the queries clutters the report." | One bullet per query. The queries are the only part of the sweep the reader can independently re-run; without them "nothing found" is unfalsifiable. |
 | "I'm confident, so the claim map is a formality." | Confidence is the thing under audit. The claim map is how you find out whether it is earned. |
 | "I'll hedge everything to be safe." | Over-hedging is a calibration failure, not a safe default. It buries the claims the evidence supports and trains the user to ignore every caveat. |
 | "The sources basically agree." | "Basically" is where false consensus hides. Trace them to their origins; if they share one, they are one source. Otherwise name the disagreement. |
@@ -157,7 +157,7 @@ Return exactly these five sections, in this order. The skeleton is in `templates
 ### Decision audit
 One line per dimension: rating, then a one-clause reason pointing at the claim map. Include false consensus only when multiple sources or data points were synthesized.
 ### Claim map
-Supported facts (with origin cited inline) / Reasonable inferences / Speculation or missing evidence, then **Evidence sweep** (per load-bearing claim: the queries run, then For and Against with origins), then **Coverage** (searched, nothing found, N/A, independent origins, why the sweep stopped).
+Supported facts (with origin cited inline) / Reasonable inferences / Speculation or missing evidence, then **Evidence sweep** (per load-bearing claim: a verdict, then one bullet per query — marker, query, what it found, origin), then **Coverage** (searched, nothing found, N/A, independent origins, why the sweep stopped).
 ### Hidden assumptions
 What must be true for each inference to hold. Flag the ones the user is unlikely to have considered.
 ### Calibrated answer
