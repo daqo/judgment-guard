@@ -1,4 +1,11 @@
 # Judgment Guard Rubric
+Level definitions for the seven dimensions rated in Step 4 of `SKILL.md`. Consult this when a rating is borderline. Every rating must cite specific claim-map rows, not a general impression.
+
+## Borderline calls
+- Evidence strength selects the intervention tier (high → Tier A, medium → Tier B, low → Tier C), so it is the rating that matters most. When torn between two levels, count: if any load-bearing claim sits in *Speculation / missing evidence*, the rating cannot be high. If most load-bearing claims sit in *Supported facts* and none in speculation, it cannot be low.
+- Stale evidence caps evidence strength at medium unless recency has been verified.
+- A rating you cannot justify from the claim map is a sign the claim map is incomplete. Go back to Step 2.
+
 ## Evidence strength
 High:
 - multiple specific supporting facts

@@ -14,6 +14,7 @@ mkdirSync(targetDir, { recursive: true });
 cpSync(join(packageRoot, "SKILL.md"), join(targetDir, "SKILL.md"));
 cpSync(join(packageRoot, "rubric.md"), join(targetDir, "rubric.md"));
 cpSync(join(packageRoot, "templates"), join(targetDir, "templates"), { recursive: true });
+cpSync(join(packageRoot, "examples"), join(targetDir, "examples"), { recursive: true });
 
 console.log(`\n  judgment-guard installed to ${targetDir}\n`);
 console.log("  Claude Code will load this skill automatically when you ask");
