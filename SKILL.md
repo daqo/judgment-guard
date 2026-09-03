@@ -174,7 +174,7 @@ The top 3 checks: what, where/how, and what result would change the conclusion.
 
 ## Reference files
 Load only when needed:
-- `evidence-protocol.md` — query plan, source-type coverage matrix, independence test, ledger format, stopping rule, no-search-tool fallback. Use during Step 2.
+- `evidence-protocol.md` — query plan, source-type coverage matrix, independence test, ledger format, stopping rule, no-search-tool fallback, and the reader-facing Evidence sweep and Coverage formats. Use during Steps 2–3.
 - `rubric.md` — level definitions for each dimension. Use when a rating is borderline.
 - `templates/report_template.md` — blank output skeleton.
 - `examples/worked-example.md` — one complete Tier B report. Use when unsure what a finished report looks like.

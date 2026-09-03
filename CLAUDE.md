@@ -45,7 +45,7 @@ Step 2 (evidence sweep) optimises for **recall**: find every kind of evidence th
 - The skill version lives in `metadata.version` in `SKILL.md` and must equal `package.json` `version`. Bump with `npm version <patch|minor|major>` — the `version` hook rewrites `SKILL.md` and stages it. Never edit one without the other; `npm test` fails on drift
 - Run `npm test` before committing
 - The five output sections in `SKILL.md`, `templates/report_template.md`, and `examples/worked-example.md` must stay in sync. The Evidence sweep block (Queries/For/Against per load-bearing claim) and the Coverage note live inside the Claim map section, not as extra sections. The per-result ledger stays internal
-- Source-type rows in `evidence-protocol.md` and the coverage note in the template should match
+- The Evidence sweep block format and the Coverage note in `evidence-protocol.md` §10, `templates/report_template.md`, and `examples/worked-example.md` must match; source-type rows in the protocol's matrix and the Coverage note must match
 - Rubric levels (high/medium/low) in `rubric.md` should match the scales used in the decision audit
 - False consensus uses `none detected / possible / present` scale across all files
 - Any new top-level file or directory the skill references must be added to `FILES` in `bin/install.mjs` and the `files` array in `package.json`
